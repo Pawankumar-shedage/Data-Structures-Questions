@@ -1,6 +1,6 @@
 package LinkedList;
 
-import java.util.LinkedList;
+//import java.util.LinkedList;
 
 public class LL {
 	
@@ -163,19 +163,44 @@ public class LL {
 	}
 	
 	
-//	to check whether a ll is palindrome or not
 	
-	public boolean isPalindrome() {
-		boolean f = false;
+	public Node addTwoNumbers(Node l1, Node l2) 
+	{
+		Node ptr1 = l1;
+		Node ptr2 = l2;
+		Node carry = l2;
+		int carrsum = 0;
 		
-//		we have the head
-		Node h1 = head;
+		//decide size of list 2
+		if()
 		
-		Node h2 = head;
+		while(ptr2 != null && ptr1 != null)
+		{
+			ptr2.data += ptr1.data;
+			
+			if(ptr2.data >= 10)
+			{
+			    carrsum = ptr2.data/10;
+				ptr2.data  %= 10;
+				carry.data += carrsum;
+				
+				carry = carry.next;
+			}
+			
+
+			
+			ptr1 = ptr1.next;
+			ptr2  =ptr2.next;
+			
+		}
 		
-		
-		return f;
+		//we have to reverse the list.
+//		reverseL2(ptr2);
+		return ptr2;
 	}
+	
+	
+	
 	
 	
 	
@@ -183,18 +208,64 @@ public class LL {
 	//Custom LL
 	
 	public static void main(String[] args) {
-		LL list = new LL();
+		LL l1 = new LL();
+		LL l2 = new LL();
+		
+//		Example 1:
+//		l1.addLast(2);
+//		l1.addLast(4);
+//		l1.addLast(3);
+//		
+//		
+//		l2.addLast(5);
+//		l2.addLast(6);
+//		l2.addLast(4);
+		
+//		Example 3:
+//
+//			Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+//			Output: [8,9,9,9,0,0,0,1]
+		l1.addLast(9);
+		l1.addLast(9);
+		l1.addLast(9);
+		l1.addLast(9);
+		l1.addLast(9);
+		l1.addLast(9);
+		l1.addLast(9);
+		
+		l2.addLast(9);
+		l2.addLast(9);
+		l2.addLast(9);
+		l2.addLast(9);
+		
+		
+		
+		l1.printList();
+		l2.printList();
+		
+		l2.addTwoNumbers(l1.head, l2.head);
+		
+		//here we get the head of the l2 list,
+		//Now we have to reverse the list.
+//		l2.reverseList();
+		
+		System.out.println("Sum of nums");
+		l2.printList();
+		
+//	---------------------------------------------------	
+//		System.out.println(l2);
+		
+		
+//		System.out.println(l2.head.next.data);
 	
-		list.addFirst(22);
-		list.addFirst(21);
-		list.addFirst(20);
-		
-		
-		list.addLast(23);
-		list.printList();
-		
-		list.reverseList();
-		list.printList();
+//		list.addFirst(22);
+//		list.addFirst(21);
+//		list.addFirst(20);
+//		
+//		
+//		
+//		list.reverseList();
+//		list.printList();
 
 //		
 //		

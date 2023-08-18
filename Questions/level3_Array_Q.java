@@ -31,15 +31,29 @@ public class level3_Array_Q {
 		System.out.println("Second largest "+ arr[arr.length - 2]);
 	}
 	
+	public int findDuplicate(int[] arr)
+	{
+		//brute force approach, T.C O(n^2);
+		
+		for(int i=0; i<arr.length; i++)
+		{
+			for(int j=i+1; j<arr.length; j++)
+			{
+				if(arr[i] == arr[j])	
+				{
+					return arr[j];
+				}
+			}
+		}
+		return -1;
+		
+	}
 	
 	
 	
 	
 	
-	
-	
-	
-	public void printArray(int arr[])
+	public static void printArray(int arr[])
 	{
 		for(int i=0; i<arr.length; i++)
 		{
@@ -52,11 +66,35 @@ public class level3_Array_Q {
 	public static void main(String[] args) {
 		
 		level3_Array_Q q = new level3_Array_Q();
-		int arr[] = {1,2,81,56,22,85};
-		q.sortArrray(arr);
+		int arr[] = {1,22,81,56,22,85};
 		
-		q.printArray(arr);
+//		q.sortArrray(arr);
+//		q.secodLargest(arr);
 		
-		q.secodLargest(arr);
+		int dup = q.findDuplicate(arr);
+		System.out.println(dup);
+		
+		printArray(arr);
+		
 	}
 }
+
+
+//Questions: Level: 3
+//
+//(Array programs)
+//
+//1. program to find duplicate elements in an array.
+//2. program to find second largest element in an array of integers.
+//3. program to find out the intersection of two arrays. 
+//4. program to find out occurrences of each element in an array. 
+//5. find the minimum and maximum element of an array. 
+//6. program to separate even and odd numbers in an array. 
+//7. program to delete specific integer. 
+//8. sum of positive and negative elements of an array. 
+//9. insert any element at the end/start/middle of the array.
+//10. reverse of array. 
+//11. sum of elements of an array. 
+//12. program tro find the average of an array. 
+//
+

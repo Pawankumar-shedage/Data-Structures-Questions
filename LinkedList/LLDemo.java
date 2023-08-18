@@ -2,6 +2,8 @@ package LinkedList;
 
 import java.util.*;
 
+import LinkedList.LL.Node;
+
 public class LLDemo {
 
 	
@@ -22,33 +24,25 @@ public class LLDemo {
 		return true;
 	}
 	
+	
+	
 	public static void main(String[] args) {
 		
 
 		
 		LinkedList<Integer> ll = new LinkedList<>();
+		LinkedList<Integer> l2 = new LinkedList<>();
+		ll.add(1);
+		ll.add(2);
+		ll.add(3);
+		
+		l2.add(5);
+		l2.add(7);
+		l2.add(6);
 		
 		
-		String str = "racecar";
-//		System.out.println(str.indexOf("c"));
-		
-		boolean isPalindrome = isPalindrome(str);
-//		System.out.println(isPalindrome);
-		
-		for(int i=1; i<=5; i++)
-		{
-			ll.add(i);
-		}
 		
 		System.out.println(ll);
-		
-		LinkedList<Integer> l2 = new LinkedList<>();
-		for(int i=ll.size(); i>0; i--)
-		{
-//			l2.add(i);
-
-		}
-		System.out.println(l2);
 		
 		
 		

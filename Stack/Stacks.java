@@ -34,7 +34,7 @@ public class Stacks {
 		//base case;
 		if(s.isEmpty())
 		{
-//			System.out.println("Hi");
+
 			return;
 		}
 		

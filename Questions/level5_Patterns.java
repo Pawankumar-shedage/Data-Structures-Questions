@@ -146,6 +146,77 @@ public class level5_Patterns {
 	}
 	
 	
+	public void butterFly()
+	{
+		int n=6;
+		for(int i=1; i<=n; i++)
+		{
+			for(int j=1; j<=i; j++)
+			{
+				System.out.print("*");
+			}
+			
+			
+			//spaces
+			for(int k=0; k<(2*(n-i)); k++)
+			{	
+				System.out.print(" ");
+			}
+			
+			
+			
+			for(int j=1; j<=i; j++)
+			{
+				System.out.print("*");
+			}
+			
+			System.out.println();
+		}
+		for(int i=n; i>=1; i--)
+		{
+			for(int j=1; j<=i; j++)
+			{
+				System.out.print("*");
+			}
+			
+			//spaces
+			for(int k=0; k<(2*(n-i)); k++)
+			{
+				System.out.print(" ");
+			}
+			
+			for(int j=1; j<=i; j++)
+			{
+				System.out.print("*");
+			}
+			
+			System.out.println();
+		}
+		
+		System.out.println("-------------------------");
+	}
+	
+	public void solidRhombus()
+	{
+		int n = 5;
+		for(int i=0; i<n; i++)
+		{
+			//spaces
+			int spaces =  n-i;
+			for(int j=0; j<spaces; j++)
+			{
+				System.out.print(" ");
+			}
+			
+			for(int j=0; j<n;j++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+			
+		}
+		System.out.println("-------------------------");
+	}
 	
 	public static void main(String[] args) {
 		
@@ -163,6 +234,10 @@ public class level5_Patterns {
 		
 		
 		q.minGlass(6);
+		
+		q.butterFly();
+		
+		q.solidRhombus();
 	}
 	
 	
