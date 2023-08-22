@@ -5,11 +5,7 @@ import java.util.LinkedList;
 public class LinkList3 {
 	
 	
-	public void addTwoNumbers(LinkedList<Integer> l1, LinkedList<Integer> l2) {
-        
-		Node curr = head;
-		Node prev = head;
-    }
+	
 
 	public static void main(String[] args) {
 		

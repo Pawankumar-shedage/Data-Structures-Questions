@@ -148,7 +148,7 @@ public class level5_Patterns {
 	
 	public void butterFly()
 	{
-		int n=6;
+		int n=3;
 		for(int i=1; i<=n; i++)
 		{
 			for(int j=1; j<=i; j++)
@@ -218,6 +218,8 @@ public class level5_Patterns {
 		System.out.println("-------------------------");
 	}
 	
+	
+	
 	public static void main(String[] args) {
 		
 		level5_Patterns q = new level5_Patterns();
@@ -238,6 +240,8 @@ public class level5_Patterns {
 		q.butterFly();
 		
 		q.solidRhombus();
+		
+		
 	}
 	
 	

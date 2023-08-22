@@ -172,7 +172,7 @@ public class LL {
 		int carrsum = 0;
 		
 		//decide size of list 2
-		if()
+//		if()
 		
 		while(ptr2 != null && ptr1 != null)
 		{
