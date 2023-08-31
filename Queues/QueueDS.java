@@ -1,5 +1,7 @@
 package Queues;
 
+import java.util.Stack;
+
 public class QueueDS {
 	
 	//Imolementing queue with  array.
@@ -67,7 +69,53 @@ public class QueueDS {
 			return arr[0];
 		}
 		
+	
+		public static void reverseQueue(Queue q)
+		{
+			//EZ Solution.
+			if(q.isEmpty())
+				return;
+			
+			int e = q.peek();
+			q.remove();
+			
+			reverseQueue(q);
+			
+			add(e); //to the back of the q, removing from front then adding at back.
+		}
 		
+		//Reverse K elem in Q--------------
+		
+		public static int  poll()		//returns the top of the q and removes it from the q;
+		{
+			int front = peek();
+			remove();
+			return front;
+		}
+		
+		public static Queue rev_first_k(Queue q, int k)
+		{
+			solvek(q,k);
+			
+			int s = q.size-k;
+			while(s-- > 0)
+			{
+				int e = q.poll();
+				add(e);
+			}
+			
+			return q;
+		}
+		
+		public static void solvek(Queue q, int k)
+		{
+			if(k==0) return;
+			
+			int e = poll();  //direct poll() returns the top elem and removes it.
+			solvek(q,k-1);
+			
+			add(e);
+		}
 		
 	
 	
@@ -78,9 +126,18 @@ public class QueueDS {
 		q.add(2);
 		q.add(3);
 		q.add(4);
+		q.add(5);
 		
 //		q.remove();
 //		q.remove();
+		
+//		System.out.println(q.poll());
+		
+//		q.reverseQueue(q);
+		
+		//to rev k
+		q = rev_first_k(q, 5);
+		
 		
 		while(!q.isEmpty())
 		{

@@ -16,6 +16,8 @@ public class QueueCF {
 		q.add(23);
 		q.add(53);
 		
+		int head = q.poll();
+		System.out.println(head);
 		
 		
 		while(!q.isEmpty())
