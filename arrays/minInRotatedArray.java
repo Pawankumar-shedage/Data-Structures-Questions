@@ -1,5 +1,6 @@
 package arrays;
 
+//To  find minimum element is rotated array.
 public class minInRotatedArray {
 	
 	public static int findMin(int[] nums) {
