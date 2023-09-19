@@ -200,16 +200,68 @@ public class LL {
 	}
 	
 	
-	
+	public static Node mergeLinkedList(Node l1, Node l2 )
+	{
+		//to merge 2 sorted linked list
+		Node h = l1;
+		Node i = l1;
+		Node j = l2;
+		
+		if(l1 == null || l2 == null)
+		{
+			System.out.println("list is empty");
+			return null;
+		}
+		
+//		loop through l1 and l2
+		while(j != null )
+		{
+			if(j.data < i.data)
+			{
+				//1.swap data of i and j
+				int temp = i.data;
+				i.data = j.data;
+				j.data = temp;
+				
+				//2. add node j to i->next
+				i.next = j;
+				j.next = i.next;
+			}
+			else {
+				i.next = j;
+				j.next = i.next;
+			}
+			
+			i = i.next;
+			j = j.next;
+		}
+		
+		return h;
+	}
 	
 	
 	
 	//-------------------------------------------------------------
-	//Custom LL
+
 	
 	public static void main(String[] args) {
 		LL l1 = new LL();
 		LL l2 = new LL();
+		
+		
+		l1.addLast(1);
+		l1.addLast(3);
+		l1.addLast(4);
+		
+		l2.addLast(2); l2.addLast(5); l2.addLast(7);
+		
+		l1.printList();
+		l2.printList();
+		
+		mergeLinkedList(l1.head,l2.head);
+		
+		l1.printList();
+		l2.printList();
 		
 //		Example 1:
 //		l1.addLast(2);
@@ -225,32 +277,34 @@ public class LL {
 //
 //			Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 //			Output: [8,9,9,9,0,0,0,1]
-		l1.addLast(9);
-		l1.addLast(9);
-		l1.addLast(9);
-		l1.addLast(9);
-		l1.addLast(9);
-		l1.addLast(9);
-		l1.addLast(9);
+//		l1.addLast(9);
+//		l1.addLast(9);
+//		l1.addLast(9);
+//		l1.addLast(9);
+//		l1.addLast(9);
+//		l1.addLast(9);
+//		l1.addLast(9);
+//		
+//		l2.addLast(9);
+//		l2.addLast(9);
+//		l2.addLast(9);
+//		l2.addLast(9);
+//		
+//		
+//		
+//		l1.printList();
+//		l2.printList();
 		
-		l2.addLast(9);
-		l2.addLast(9);
-		l2.addLast(9);
-		l2.addLast(9);
-		
-		
-		
-		l1.printList();
-		l2.printList();
-		
-		l2.addTwoNumbers(l1.head, l2.head);
-		
-		//here we get the head of the l2 list,
-		//Now we have to reverse the list.
-//		l2.reverseList();
-		
-		System.out.println("Sum of nums");
-		l2.printList();
+//		l2.addTwoNumbers(l1.head, l2.head);
+//		l1.addTwoNumbers(l2.head,l1.head);
+//		
+//		l1.printList();
+//		//here we get the head of the l2 list,
+//		//Now we have to reverse the list.
+////		l2.reverseList();
+//		
+//		System.out.println("Sum of nums");
+//		l2.printList();
 		
 //	---------------------------------------------------	
 //		System.out.println(l2);
@@ -323,6 +377,8 @@ public class LL {
 		
 		
 		//Palindrome ll
+		
+	
 		
 
 		
