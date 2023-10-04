@@ -14,7 +14,7 @@ public class validAnagram_Hashing {
 //		hm.put(3, 'r');
 		
 		String s = "aacc";
-		String w = "ccaa";
+		String w = "ccac";
 		boolean isAnagram = true;
 			
 		//Adding char of s into hm
@@ -24,7 +24,7 @@ public class validAnagram_Hashing {
 			hm.put(ch, hm.getOrDefault(ch, 0) + 1);
 		}
 		
-//		System.out.println(hm.get('a'));
+		
 		//traversing string w and decrementing freq count of chars in hm 
 		for(int i=0; i<w.length(); i++)
 		{
